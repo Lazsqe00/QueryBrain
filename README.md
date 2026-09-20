@@ -1,3 +1,9 @@
+## Thành viên nhóm
+- Nguyễn Xuân Kì Diệu - Leader
+- Trần Minh Hoàng
+- Võ Huỳnh Kim Chi
+- Ngô Nguyễn Nhật Cường
+---
 # QueryBrain
 **QueryBrain** là hệ thống hỗ trợ người dùng trò chuyện bằng với AI ngôn ngữ tự nhiên, định hướng phân tích cấu trúc dữ liệu và sinh câu truy vấn SQL nhanh chóng.
 <p align="center">
