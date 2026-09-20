@@ -1,0 +1,322 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-light: #eef2ff;
+    --primary-black: #111827;
+    --primary-xam: #f3f3f750;;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f9fafb;
+}
+
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* ─── 0. NAV RAIL (44px dark) ─── */
+.nav-rail {
+    order: 1;
+    width: 55px;
+    min-width: 48px;
+    height: 100vh;
+    background-color: var( --primary-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 0;
+    gap: 4px;
+    flex-shrink: 0;
+    z-index: 20;
+}
+
+.btn-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: var(--primary-color, #4f46e5);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+}
+.btn-logo:hover {
+    background-color: var(--primary-hover, #4338ca);
+    color: #ffffff;
+}
+
+.nav-icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.nav-icon-btn:hover {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.sidebar {
+    order: 2;
+    width: 280px;
+    min-width: 240px;
+    height: 100vh;
+    background-color: #f9fafb;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: hidden;
+    user-select: none;
+}
+
+.sidebar-tab-btn {
+    flex: 1;
+    padding: 9px 20px;
+    font-size: 13px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: #6b7280;
+}
+
+.sidebar-tab-btn.active {
+    color: var(--primary-black);
+    border: 1px solid var(--primary-black);
+    font-weight: 600;
+}
+
+.sidebar-tab-btn.inactive {
+    color: #6b7280;
+    font-weight: normal;
+}
+
+.sidebar-tab-btn:hover {
+    color: #374151;
+}
+
+.selector-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 14px;
+    color: #1f2937;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.selector-card:hover {
+    border-color: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+    .nav-rail,
+    .sidebar {
+        display: none;
+    }
+}
+
+.chat-main {
+    order: 3;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top bar */
+.chat-topbar {
+    height: 52px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #ffffff;
+    flex-shrink: 0;
+}
+
+.btn-new-chat {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4b5563;
+    font-size: 11px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    background-color: #ffffff;
+}
+.btn-new-chat:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+}
+
+/* Chat scroll container */
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 0 16px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-inner {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 12px 14px;
+    transform: translateX(-30px);
+}
+
+/* Message bubbles */
+.bubble-user {
+    background: #E8F3FE;
+    color: #111827;
+    font-size: 16px;
+    padding: 7px 18px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    line-height: 1.55;
+    max-width: 580px;
+    word-break: break-word;
+}
+
+.avatar-user {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #e0e7ff;
+    color: #4f46e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.avatar-ai {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+    color: var(--primary-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    border: 1px solid #e5e7eb;
+}
+
+.floating-input-bar-wrap {
+    flex-shrink: 0;
+    padding-bottom: 20px;
+    padding-top: 8px;
+    background: transparent;
+}
+
+.floating-input-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 30px;
+    padding: 6px 8px 6px 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-input-form:focus-within {
+    border-color: #6366f1;
+    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.16);
+}
+
+.floating-input-field {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    color: #1f2937;
+    padding: 8px 20px;
+}
+.floating-input-field::placeholder {
+    color: #9ca3af;
+}
+
+.btn-send-message {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    color: var(--primary-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-send-message:hover {
+    transform: scale(1.04);
+}
+
+
+.shimmer-sweep {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #888888; 
+}
+
+.shimmer-sweep svg,
+.shimmer-sweep span {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.shimmer-sweep span {
+    animation-delay: 0.5s;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.95; 
+    }
+    50% {
+        opacity: 0.25; 
+    }
+}
