@@ -38,40 +38,7 @@ return [
         'temperature' => 0.7,
     ]
 ];
-
-```
-## Cấu trúc thư mục
-
-```plaintext
-BaiTapNhom/
-├── assets/                
-│   ├── css/
-│   │   └── style.css        
-│   ├── img/
-│   │   ├── logo.png       
-│   │   └── query-brain-logo-link.png
-│   └── js/
-│       └── app.js           # ajax
-├── config/
-│   └── config.php           # cấu hình
-├── src/                    
-│   ├── AI/
-│   │   ├── AiClientInterface.php  # Interface chuẩn hóa các AI Client
-│   │   └── GlmClient.php          # GLM
-│   ├── Controllers/
-│   │   └── ChatController.php     # Điều khiển luồng xử lý chat, session, render view
-│   └── Support/
-│       ├── MarkdownRenderer.php   # Lớp xử lý markdown
-│       └── Parsedown.php          # Thư viện
-├── views/                   
-│   ├── components/
-│   │   ├── chat_area.php    
-│   │   ├── nav_rail.php 
-│   │   └── sidebar.php      
-│   ├── layout/
-│   │   ├── header.php       # Header
-│   │   └── footer.php       # Footer
-│   └── modals/              
+          
 ├── autoload.php             # load class
 ├── index.php              
 └── README.md
